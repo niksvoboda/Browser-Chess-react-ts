@@ -29,6 +29,7 @@ export class Cell {
         
     }
     moveFigure(target:Cell) {
+        //если фигура существует и клетка назначения не занята то переназначаем (передвигаем ее туда)
         if(this.figure && this.figure?.canMove(target)){
             this.figure.moveFigure(target)
             target.figure = this.figure;

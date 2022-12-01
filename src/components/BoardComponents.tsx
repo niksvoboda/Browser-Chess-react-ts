@@ -14,7 +14,7 @@ const BoardComponents: FC<BoardProps> = ({board, setBoard}) =>{
     const  [selectedCell, setSelectedCell] = useState <Cell | null> (null)
 
     //колбэк для подсвечивания выбранного поля с фигурой
-    const clickFigure  = (cell: Cell) =>{
+    function clickFigure  (cell: Cell) {
         // Если есть выбранная ячейка на которой стоит фигура и эта ячейка не равняется той
         // на которую мы хотим нажать и при этому метод canMove возвращает нам true 
         // для этой ячейки то передвигаем фигуру
@@ -27,7 +27,9 @@ const BoardComponents: FC<BoardProps> = ({board, setBoard}) =>{
         }  else {
              //если нет выбранной ячейки и  в ячейке есть фигура 
              //тогда подсвечиваем при клике
+            
             setSelectedCell(cell)
+            highLightCells(cell)
         }
        
        
@@ -35,14 +37,15 @@ const BoardComponents: FC<BoardProps> = ({board, setBoard}) =>{
     } 
     //Перерисовываем доску для подсветки возможных ходов при каждой новой выбранной фигуре
     useEffect(()=>{
-        highLightCells()
+        highLightCells(selectedCell)
     },[selectedCell])
 
-    const highLightCells = () => {
+    function highLightCells(selectedCell: Cell | null) {
         board.highLightCells(selectedCell)
     }
-    const updateBoard = () => {
+    function updateBoard (){
         const newBoard = board.getCopyBoard()
+        board.highLightCells(null)
         setBoard(newBoard)
     }
 

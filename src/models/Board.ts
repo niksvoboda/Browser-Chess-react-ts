@@ -11,7 +11,7 @@ import { classicNameResolver } from "typescript"
 export class Board{
     cells: Cell[][]=[]
     static cells: any
-
+    //** отрисовываем доску */
     public initCells(){
 
         for(let i=0; i< 8; i++){
@@ -32,7 +32,7 @@ export class Board{
         newBoard.cells = this.cells
         return newBoard
     }
-
+    /** подсветка клеток доступных для хода */
     public highLightCells(selectedeCell: Cell | null){
         for(let i =0; i<this.cells.length; i++){
             const row  = this.cells[i];
@@ -43,11 +43,11 @@ export class Board{
             }
         }
     }
-
+    /** метод для назначения клеток фигурам  */
     public getCell(x: number, y:number){
         return this.cells[y][x]
     }
-
+    /**расставляем фигуры при инициализации */
     private addBishop(){
         new Bishop(Colors.WHITE, this.getCell(2, 0))
         new Bishop(Colors.WHITE, this.getCell(5, 0))

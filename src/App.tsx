@@ -13,8 +13,11 @@ function App() {
 
   function restart() {
     const newBoard = new Board();
+    //отрисовываем доску
     newBoard.initCells()
+    //расставляем фигуры
     newBoard.addFigures()
+    //сохраняем состояние доски
     setBoard(newBoard)
   }
 
