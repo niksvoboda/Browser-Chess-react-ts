@@ -31,5 +31,22 @@
 }
 
 .white{
-  background-color: rgb(241, 236, 229);
+  background-color: rgb(238, 175, 86);
+}
+
+.cell img{
+  width:46px;
+  height: 46px;
+  position: relative;
+}
+
+.selected{
+  background-color: blue;
+}
+
+.available{
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: brown;
 }
