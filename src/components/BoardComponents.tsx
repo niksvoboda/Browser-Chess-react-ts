@@ -26,7 +26,7 @@ const BoardComponents: FC<BoardProps> = ({board, setBoard}) =>{
             updateBoard()
         }  else {
              //если нет выбранной ячейки и  в ячейке есть фигура 
-             //тогда подсвечиваем при клике
+             //тогда подсвечиваем при кликеf 
             
             setSelectedCell(cell)
             highLightCells(cell)

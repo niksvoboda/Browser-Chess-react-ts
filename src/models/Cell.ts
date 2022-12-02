@@ -28,6 +28,21 @@ export class Cell {
 
         
     }
+
+    isEmptyVertical(target:Cell): boolean{
+        return true;
+    }
+
+    isEmptyHorizontal(target: Cell): boolean{
+        return true;
+    }
+
+    isEmptyDiagonal(target:Cell): boolean{
+        return true;
+    }
+
+
+
     moveFigure(target:Cell) {
         //если фигура существует и клетка назначения не занята то переназначаем (передвигаем ее туда)
         if(this.figure && this.figure?.canMove(target)){

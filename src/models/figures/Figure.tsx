@@ -30,8 +30,12 @@ export class Figure{
         this.id = Math.random()
 
     }
-
+    //** в родительском классе обьявляем общие условия возможности хода для всех фигур */
     canMove(target: Cell) : boolean {
+        //** Нельзя ходить на клетки с фигурами своего цвета */
+        if(target.figure?.color === this.color) return false;
+        //** Нельзя ходить на клетку с королем потому что если доступен такой ход значит игра закончена*/
+        if(target.figure?.name === FigureNames.KING) return false;
         return true;
     }
 
