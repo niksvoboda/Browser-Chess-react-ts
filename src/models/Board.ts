@@ -6,7 +6,7 @@ import { King } from "./figures/King"
 import { Rook } from "./figures/Rook"
 import { Bishop } from "./figures/Bishop"
 import { Knight } from "./figures/Knight"
-import { classicNameResolver } from "typescript"
+
 
 export class Board{
     cells: Cell[][]=[]
@@ -43,7 +43,7 @@ export class Board{
             }
         }
     }
-    /** метод для назначения клеток фигурам  */
+    /** метод для получения фигур в клетках  */
     public getCell(x: number, y:number){
         return this.cells[y][x]
     }
